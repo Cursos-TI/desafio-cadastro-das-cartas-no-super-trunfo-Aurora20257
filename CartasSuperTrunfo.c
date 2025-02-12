@@ -3,7 +3,7 @@
 int main(){
 
 //Definições das informações do estado
-printf("Desafio Xadrez: \n");
+printf("Desafio Xadrez!\n");
 char estado[50];
 int codigo_da_carta;
 char nome_da_cidade[50];
