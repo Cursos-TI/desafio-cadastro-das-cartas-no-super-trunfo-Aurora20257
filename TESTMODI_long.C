@@ -1,3 +1,7 @@
+
+/*NÍVEL MESTRE - MODIFICADORES (LONG). É usado para números inteiros muito grande*/
+//Apenas Teste
+
 #include <stdio.h>
 
 int main(){
