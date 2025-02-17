@@ -97,7 +97,7 @@ O sistema exibirá os dados, incluindo as novas propriedades calculadas, de form
 //Densidade Populacional: População dividida pela área da cidade.
 float densidade_populacional = populacao / area_km2;
 
-//IB per Capita: PIB total dividido pela população.
+//PIB per Capita: PIB total dividido pela população.
 float pib_per_capita = pib / populacao;
 
 // Exebição de dados Aventureiro
