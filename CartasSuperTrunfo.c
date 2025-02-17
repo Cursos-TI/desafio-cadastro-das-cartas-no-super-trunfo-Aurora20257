@@ -95,10 +95,10 @@ O sistema exibirá os dados, incluindo as novas propriedades calculadas, de form
 
 
 //Densidade Populacional: População dividida pela área da cidade.
-float densidade_populacional = populacao / area_km2;
+float densidade_populacional = populacao / area_km2; // (int = populacao; float = area_km2;)
 
 //PIB per Capita: PIB total dividido pela população.
-float pib_per_capita = pib / populacao;
+float pib_per_capita = pib / populacao; // (int = populacao; float = pib;)
 
 // Exebição de dados Aventureiro
 printf("\n---Exibição do cálculo---\n"); //Exibição dSãoe Título
