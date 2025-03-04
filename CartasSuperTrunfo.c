@@ -1,114 +1,149 @@
-#include <stdio.h>
+# include <stdio.h>
+/*"Agora, iremos revisar tudo o que foi ensinado no Super Trunfo em C: Fundamentos e Técnicas - Tema 01, 
+onde aprendemos a utilizar os fundamentos e técnicas, especificadores e operadores, desenvolvendo diferentes lógicas, 
+tomando decisões simples com a estrutura if, utilizando pontos flutuantes (float) e manipulando a entrada e saída de dados."*/
+
+int main (){
+
+char   estado1[50], estado2[50];
+int    codigo_da_carta1, codigo_da_carta2;
+char   nome_da_cidade1[50], nome_da_cidade2[50];
+int    populacao1, populacao2;
+float  area_km2_1, area_km2_2;
+float  pib1, pib2;
+int    pontos_turisticos1, pontos_turisticos2;
 
 
-/* 🎮 Nível Novato
-No nível Novato, você iniciará criando o sistema básico do jogo Super Trunfo com o tema "Países". As cartas serão divididas por estados, cada um com quatro cidades.
+printf("\n\nCARTA1\n\n");
+//Leitura do primeiro estado
+printf("Estado 1: \n");
+scanf(" %[^\n]", estado1);
 
-Cada país será dividido em oito estados, identificados pelas letras de A a H. Cada estado terá quatro cidades, numeradas de 1 a 4. A combinação da letra do estado 
-e o número da cidade define o código da carta (por exemplo, A01, A02, B01, B02).
+printf("Digite o Código da Carta: \n");
+scanf("%d",&codigo_da_carta1);
 
-🚩 Objetivo:
-Criar cartas representando cidades, contendo as seguintes propriedades:
-População
-Área
-PIB
-Número de pontos turísticos
-
-⚙️ Funcionalidades do Sistema:
-O sistema permitirá ao usuário cadastrar cartas de cidades, inserindo manualmente os dados via terminal de comando.
-Após o cadastro, o sistema exibirá os dados de cada cidade de forma clara e organizada.
-
-📥 Entrada e 📤 Saída de Dados:
-O usuário insere os dados de cada carta interativamente.
-Após o cadastro, os dados são exibidos com todas as propriedades da cidade, uma por linha.*/
-
-
-int main(){
-
-//Definições das informações do estado
-printf("Desafio Xadrez!\n");
-char estado[50];
-int codigo_da_carta;
-char nome_da_cidade[50];
-int populacao;
-float area_km2;
-float pib;
-int pontos_turisticos;
-
-//Entrada de dados
-printf("Estado: \n");
- scanf("%[^\n]", estado); //Permite ler espaços (Char)
-  getchar(); 
-
-printf("Digiti o Código da Carta: \n");
- scanf("%d", &codigo_da_carta); //(int)
-  getchar(); 
-
+getchar(); // Limpa buffer antes da leitura de string com espaços
 printf("Nome da Cidade: \n");
- scanf("%[^\n]", nome_da_cidade); //Permite ler espaços (char)
- 
+scanf(" %[^\n]", nome_da_cidade1);
 
 printf("População: \n");
- scanf("%d", &populacao); //(int)
+scanf("%d", &populacao1);
 
-  getchar(); // Limpa o buffer do teclado
-
-printf("Área: \n"); 
- scanf("%f", &area_km2); //(float)
-
-  getchar(); // Limpa o buffer do teclado
+printf("Área: \n");
+scanf("%f", &area_km2_1);
 
 printf("PIB: \n");
- scanf("%f", &pib); //(float)
-
+scanf("%f", &pib1);
 
 printf("Número de Pontos Turísticos: \n");
- scanf("%d", &pontos_turisticos); //(int)
-
-//Exibição dos dados coletados
-printf("\n--- Dados do Estado ---\n"); //Exibição de Títulos
-printf("Estado: %s\n", estado); // (Char)
-printf("Código da Carta: A0%d\n", codigo_da_carta); // (Int)
-printf("Cidade: %s\n", nome_da_cidade); // (Char)
-printf("População: %d habitantes\n", populacao); // (Int)
-printf("Área: %.2f km²\n", area_km2); // (float)
-printf("PIB: %.2f reais\n", pib); // (float)
-printf("Pontos turísticos: %d\n", pontos_turisticos); // (Int)
+scanf("%d", &pontos_turisticos1);
 
 
-/*🛡️ Nível Aventureiro
-No nível Aventureiro, você expandirá o sistema para incluir propriedades calculadas, permitindo uma análise mais detalhada das cartas.
-
-🆕 Diferença em relação ao Nível Novato:
-
-Novas Propriedades Calculadas:
-Densidade Populacional: População dividida pela área da cidade.
-PIB per Capita: PIB total dividido pela população.
-
-⚙️ Funcionalidades do Sistema:
-O sistema agora calculará automaticamente a Densidade Populacional e o PIB per Capita com base nos dados inseridos.
-Essas novas propriedades serão adicionadas às informações exibidas para cada cidade.
-
-📥 Entrada e 📤 Saída de Dados:
-O usuário continua inserindo os dados de cada carta interativamente.
-O sistema exibirá os dados, incluindo as novas propriedades calculadas, de forma clara e organizada.*/
 
 
-//Densidade Populacional: População dividida pela área da cidade.
-float densidade_populacional = populacao / area_km2; // (int = populacao; float = area_km2;)
+// Exibição dos dados coletados
+printf("\n--- Dados do Estado 1 ---\n");
+printf("Estado 1: %s\n", estado1);
+printf("Código da Carta: A0%d\n", codigo_da_carta1);
+printf("Cidade: %s\n", nome_da_cidade1);
+printf("População: %d habitantes\n", populacao1);
+printf("Área: %.2f km²\n", area_km2_1);
+printf("PIB: %.2f reais\n", pib1);
+printf("Pontos turísticos: %d\n", pontos_turisticos1);
 
-//PIB per Capita: PIB total dividido pela população.
-float pib_per_capita = pib / populacao; // (int = populacao; float = pib;)
-
-// Exebição de dados Aventureiro
-printf("\n---Exibição do cálculo---\n"); //Exibição dSãoe Título
-printf("Densidade Populacional: %.2f hab/km2\n", densidade_populacional); // (float)
-printf("PIB per capita: %.2f reis/hab\n", pib_per_capita); // (float)
 
 
-return 0;
 
+/*Soma total '01' dos cinco pontos importantes que indentificam o histórico de 
+cada estado inserido*/
+float soma_carta1 = populacao1 + area_km2_1 + pib1 + pontos_turisticos1; 
+
+
+
+
+printf("\n\nCARTA2\n\n");
+//Leitura do primeiro estado
+printf("Estado 2: \n");
+scanf(" %[^\n]", estado2);
+
+printf("Digite o Código da Carta: \n");s
+scanf("%d",&codigo_da_carta2);
+
+getchar(); // Limpa buffer antes da leitura de string com espaços
+printf("Nome da Cidade: \n");
+scanf(" %[^\n]", nome_da_cidade2);
+
+printf("População: \n");
+scanf("%d", &populacao2);
+
+printf("Área: \n");
+scanf("%f", &area_km2_2);
+
+printf("PIB: \n");
+scanf("%f", &pib2);
+
+printf("Número de Pontos Turísticos: \n");
+scanf("%d", &pontos_turisticos2);
+
+
+
+
+// Exibição dos dados coletados
+printf("\n--- Dados do Estado 2 ---\n");
+printf("Estado 2: %s\n", estado2);
+printf("Código da Carta: A0%d\n", codigo_da_carta2);
+printf("Cidade: %s\n", nome_da_cidade2);
+printf("População: %d habitantes\n", populacao2);
+printf("Área: %.2f km²\n", area_km2_2);
+printf("PIB: %.2f reais\n", pib2);
+printf("Pontos turísticos: %d\n", pontos_turisticos2);
+
+
+
+
+/*Soma total '02' dos cinco pontos importantes que indentificam o histórico de 
+cada estado inserido*/
+float soma_carta2 = populacao2 + area_km2_2 + pib2 + pontos_turisticos2; 
+
+
+
+
+/*Agora, iremos avaliar a comparação entre as duas cartas, somando seus valores 
+e definindo o vencedor por meio das estruturas if e else, juntamente com printf*/
+printf("\nSoma total de Carta 1: %.2f\n", soma_carta1);
+printf("\nSoma total da Carta 2: %.2f\n", soma_carta2);
+// Comparação para definir o vencendor
+if (soma_carta1 > soma_carta2)
+{
+  printf("\nCarta 1 venceu este jogo!\n");
 }
+else if (soma_carta1 < soma_carta2)
+{
+  printf("\nCarta 2 venceu este jogo!\n");
+}
+else
+{
+  printf("\nEmpate!\n");
+}
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
